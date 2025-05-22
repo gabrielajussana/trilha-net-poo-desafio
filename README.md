@@ -1,22 +1,40 @@
-# DIO - Trilha .NET - Programação orientada a objetos
-www.dio.me
+# 📱 DIO - Trilha .NET - Programação orientada a objetos
 
-## Desafio de projeto
-Para este desafio, você precisará usar seus conhecimentos adquiridos no módulo de orientação a objetos, da trilha .NET da DIO.
+## Desafio de Projeto - Sistema de Celulares
+Projeto desenvolvido como parte da trilha de **.NET da DIO**, com foco em aplicar os conceitos de **programação orientada a objetos** (POO) em um sistema simples de gerenciamento de celulares.
 
-## Contexto
-Você é responsável por modelar um sistema que trabalha com celulares. Para isso, foi solicitado que você faça uma abstração de um celular e disponibilize maneiras de diferentes marcas e modelos terem seu próprio comportamento, possibilitando um maior reuso de código e usando a orientação a objetos.
+## Objetivo da Resolução
+Modelar um sistema baseado em uma **classe abstrata** para representar um celular genérico e duas classes concretas que herdam e implementam comportamentos específicos para os modelos **Nokia** e **iPhone**.
 
-## Proposta
-Você precisa criar um sistema em .NET, do tipo console, mapeando uma classe abstrata e classes específicas para dois tipos de celulares: Nokia e iPhone. 
-Você deve criar as suas classes de acordo com o diagrama abaixo:
 
+## Diagrama de Classes
 ![Diagrama classes](Imagens/diagrama.png)
 
-## Regras e validações
-1. A classe **Smartphone** deve ser abstrata, não permitindo instanciar e servindo apenas como modelo.
-2. A classe **Nokia** e **Iphone** devem ser classes filhas de Smartphone.
-3. O método **InstalarAplicativo** deve ser sobrescrito na classe Nokia e iPhone, pois ambos possuem diferentes maneiras de instalar um aplicativo.
+##  Tecnologias Utilizadas
+- .NET 9 / .NET Core
+- C#
+- Programação orientada a objetos (POO)
+- Console Application
 
-## Solução
-O código está pela metade, e você deverá dar continuidade obedecendo as regras descritas acima, para que no final, tenhamos um programa funcional. Procure pela palavra comentada "TODO" no código, em seguida, implemente conforme as regras acima.
+## Estrutura do Projeto
+
+### Classe `Smartphone` (Abstrata)
+- Propriedades:
+  - `Numero` (pública)
+  - `Modelo`, `IMEI`, `Memoria` (privadas ou protegidas)
+- Métodos:
+  - `Ligar()`
+  - `ReceberLigacao()`
+  - `InstalarAplicativo(string nomeApp)` *(abstrato)*
+
+### Classe `Nokia`
+- Herda de `Smartphone`
+- Implementa o método `InstalarAplicativo` com comportamento específico
+
+### Classe `Iphone`
+- Herda de `Smartphone`
+- Implementa o método `InstalarAplicativo` com comportamento específico
+
+##  Execução do Programa
+A aplicação pode ser executada via terminal. No `Program.cs`, instancie objetos das classes `Nokia` e `Iphone`, utilize os métodos herdados e veja o comportamento polimórfico do método `InstalarAplicativo`.
+
